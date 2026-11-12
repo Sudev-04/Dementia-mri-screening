@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Memory Screening">
+  <rect width="512" height="512" fill="#0b4f47"/>
+  <path d="M148 132h216a20 20 0 0 1 20 20v228a20 20 0 0 1-20 20H148a20 20 0 0 1-20-20V152a20 20 0 0 1 20-20z" fill="#fff"/>
+  <path d="M176 214h160M176 266h160M176 318h96" stroke="#0b4f47" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="356" cy="356" r="58" fill="#f2a900"/>
+  <path d="M330 357l18 18 36-40" fill="none" stroke="#10222e" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
