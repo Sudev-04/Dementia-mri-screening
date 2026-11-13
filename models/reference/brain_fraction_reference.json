@@ -1,0 +1,26 @@
+{
+  "name": "OASIS-1 brain tissue fraction by age",
+  "measure": "voxels brighter than threshold x robust maximum (99.5th percentile of brain voxels), divided by all voxels in the brain mask",
+  "threshold": 0.35,
+  "age_poly_coef": [-2.15264e-05, 0.000624121, 0.890831],
+  "resid_sd": 0.026997,
+  "resid_sd_60plus": 0.036,
+  "resid_sd_60plus_note": "rounded from the fitted value; the spread is wider in older adults, so this value is used from age 60",
+  "reference_n": 316,
+  "reference_group": "OASIS-1 participants without dementia (CDR 0 or unrated young adults), one scan each",
+  "age_range": [18, 94],
+  "validation": {
+    "corr_with_oasis_nwbv": 0.961,
+    "test_retest_icc": 0.984,
+    "test_retest_pairs": 20,
+    "auc_with_age_cdr0_vs_cdr_ge_0_5": 0.712,
+    "auc_ci95": [0.638, 0.782],
+    "detected_cdr_0_5_at_80pct_specificity_tabular_model": 0.40
+  },
+  "source": "Computed 2026-11-12 with ml/paper.py on OASIS-1 (Marcus et al. 2007). Data were provided by OASIS-1: Cross-Sectional: Principal Investigators: D. Marcus, R. Buckner, J. Csernansky, J. Morris; P50 AG05681, P01 AG03991, P01 AG026276, R01 AG021910, P20 MH071616, U24 RR021382.",
+  "limits": [
+    "One scanner, one site, one research cohort. The reference may not transfer to other scanners or populations.",
+    "Only valid for scans prepared like OASIS-1 (bias-corrected, skull-stripped, T88 atlas, 1 mm).",
+    "Lower brain volume has many causes and is common in healthy ageing; it is not specific to Alzheimer's disease."
+  ]
+}

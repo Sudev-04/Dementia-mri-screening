@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "App server (demo model)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_app.py",
+      "args": ["--demo-model"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Train on synthetic data (pipeline check)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "ml.train",
+      "args": ["--data-root", "data/synthetic", "--csv", "data/synthetic/oasis_cross-sectional.csv",
+               "--out", "runs/synthetic", "--arch", "tiny", "--folds", "2", "--epochs", "2",
+               "--workers", "0", "--synthetic"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
+}

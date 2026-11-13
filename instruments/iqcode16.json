@@ -1,0 +1,42 @@
+{
+  "id": "iqcode16",
+  "version": "1.0",
+  "title": "Longer family interview",
+  "short": "Short IQCODE (16 items)",
+  "respondent": "informant",
+  "optional": true,
+  "minutes": 8,
+  "intro": "Say: \"Think about what they were like 10 years ago and compare it with what they are like now. For each situation, tell me whether they have improved, stayed the same, or got worse.\" The comparison is always with their own earlier level, not with other people.",
+  "source": {
+    "citation": "Jorm AF. A short form of the Informant Questionnaire on Cognitive Decline in the Elderly (IQCODE): development and cross-validation. Psychol Med 1994;24(1):145-153.",
+    "doi": "10.1017/s003329170002691x",
+    "pmid": "8208879"
+  },
+  "licence": "The published form states: \"There is no copyright on the Short IQCODE.\" The author asks to be kept informed of research projects that use it.",
+  "scoring": { "method": "mean", "range": [1, 5], "max_missing": 2 },
+  "options": [
+    { "label": "Much improved", "value": 1 },
+    { "label": "A bit improved", "value": 2 },
+    { "label": "Not much change", "value": 3 },
+    { "label": "A bit worse", "value": 4 },
+    { "label": "Much worse", "value": 5 }
+  ],
+  "items": [
+    { "id": "q1", "type": "choice", "prompt": "Remembering things about family and friends, such as occupations, birthdays, addresses" },
+    { "id": "q2", "type": "choice", "prompt": "Remembering things that have happened recently" },
+    { "id": "q3", "type": "choice", "prompt": "Recalling conversations a few days later" },
+    { "id": "q4", "type": "choice", "prompt": "Remembering their own address and telephone number" },
+    { "id": "q5", "type": "choice", "prompt": "Remembering what day and month it is" },
+    { "id": "q6", "type": "choice", "prompt": "Remembering where things are usually kept" },
+    { "id": "q7", "type": "choice", "prompt": "Remembering where to find things which have been put in a different place from usual" },
+    { "id": "q8", "type": "choice", "prompt": "Knowing how to work familiar machines around the house" },
+    { "id": "q9", "type": "choice", "prompt": "Learning to use a new gadget or machine around the house" },
+    { "id": "q10", "type": "choice", "prompt": "Learning new things in general" },
+    { "id": "q11", "type": "choice", "prompt": "Following a story in a book or on TV" },
+    { "id": "q12", "type": "choice", "prompt": "Making decisions on everyday matters" },
+    { "id": "q13", "type": "choice", "prompt": "Handling money for shopping" },
+    { "id": "q14", "type": "choice", "prompt": "Handling financial matters, such as the pension or dealing with the bank" },
+    { "id": "q15", "type": "choice", "prompt": "Handling other everyday arithmetic problems, such as knowing how much food to buy or how long it is between visits from family or friends" },
+    { "id": "q16", "type": "choice", "prompt": "Using their intelligence to understand what is going on and to reason things through" }
+  ]
+}

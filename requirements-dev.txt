@@ -1,0 +1,3 @@
+# App packages plus the test runner. The training test also needs requirements-ml.txt.
+-r requirements-app.txt
+pytest>=8.0

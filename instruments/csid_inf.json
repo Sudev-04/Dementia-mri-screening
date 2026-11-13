@@ -1,0 +1,55 @@
+{
+  "id": "csid_inf",
+  "version": "1.0",
+  "title": "Questions for a family member",
+  "short": "Brief CSI-D informant scale",
+  "respondent": "informant",
+  "minutes": 2,
+  "intro": "Ask someone who knows the person well and sees them often, ideally away from the person. Ask about changes compared with how the person used to be.",
+  "source": {
+    "citation": "Prince M, et al. Int J Geriatr Psychiatry 2011;26(9):899-907.",
+    "doi": "10.1002/gps.2622",
+    "pmid": "21845592"
+  },
+  "licence": "Items are from the open-access article above (Creative Commons Attribution 2.5; non-commercial). Confirm permission and obtain a validated local-language version before any real field use.",
+  "scoring": { "method": "sum", "range": [0, 6] },
+  "items": [
+    {
+      "id": "decline",
+      "type": "choice",
+      "prompt": "\"Has there been a general decline in their mental functioning?\"",
+      "options": [ { "label": "Yes", "value": 1 }, { "label": "No", "value": 0 } ]
+    },
+    {
+      "id": "reason",
+      "type": "choice",
+      "prompt": "\"Have you noticed a change in their ability to think and reason?\"",
+      "options": [ { "label": "Yes", "value": 1 }, { "label": "No", "value": 0 } ]
+    },
+    {
+      "id": "misplace",
+      "type": "choice",
+      "prompt": "\"Do they often forget where they have put things?\"",
+      "options": [ { "label": "Yes", "value": 1 }, { "label": "No", "value": 0 } ]
+    },
+    {
+      "id": "yesterday",
+      "type": "choice",
+      "prompt": "\"Do they sometimes forget what happened the day before?\"",
+      "options": [ { "label": "Yes", "value": 1 }, { "label": "No", "value": 0 } ]
+    },
+    {
+      "id": "where",
+      "type": "choice",
+      "prompt": "\"Do they sometimes forget where they are?\"",
+      "options": [ { "label": "Yes", "value": 1 }, { "label": "No", "value": 0 } ]
+    },
+    {
+      "id": "dressing",
+      "type": "choice",
+      "prompt": "\"Do they have difficulty dressing, such as misplacing buttons or putting clothes on in the wrong order or the wrong way?\"",
+      "guide": "If the difficulty is only because of a physical problem (for example arthritis or a weak arm), mark No.",
+      "options": [ { "label": "Yes", "value": 1 }, { "label": "No", "value": 0 } ]
+    }
+  ]
+}

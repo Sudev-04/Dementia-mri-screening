@@ -1,0 +1,122 @@
+{
+  "version": "2026.11-draft1",
+  "status": "DRAFT. Not approved for clinical use. A supervising clinician must review every threshold and message before this is used with real people.",
+  "order": ["csid_cog", "csid_inf", "iqcode16", "phq2"],
+  "thresholds": {
+    "csid_combined_max": {
+      "value": 4,
+      "meaning": "cognitive score minus informant score at or below this is a positive screen",
+      "basis": "published",
+      "source": "Prince 2011: combined score <5 optimal in India, China, Latin America and Nigeria pilot samples"
+    },
+    "csid_cog_positive_max": {
+      "value": 4,
+      "meaning": "with no informant, a cognitive score at or below this is a positive screen",
+      "basis": "published",
+      "source": "Prince 2011: 4 or less on the cognitive scale 'highly suggestive'"
+    },
+    "csid_cog_indeterminate_max": {
+      "value": 6,
+      "meaning": "with no informant, cognitive scores above the positive cut-off and up to this value are indeterminate",
+      "basis": "published",
+      "source": "Prince 2011: for scores of 5 or 6 an informant interview and reassessment after several months are advised"
+    },
+    "csid_inf_min": {
+      "value": 2,
+      "meaning": "informant score at or above this is a positive informant screen",
+      "basis": "published",
+      "source": "Prince 2011: informant score >1 optimal in all regions except Nigeria"
+    },
+    "iqcode16_min_x100": {
+      "value": 344,
+      "meaning": "mean Short IQCODE score, times 100, at or above this is a positive screen",
+      "basis": "published",
+      "source": "Jorm 2004 review recommends 3.44+ as a screening compromise; community studies range about 3.3 to 3.6"
+    },
+    "phq2_min": {
+      "value": 3,
+      "meaning": "PHQ-2 total at or above this is a positive depression screen",
+      "basis": "published",
+      "source": "Kroenke 2003: score of 3 or more, sensitivity 83%, specificity 92% for major depression"
+    },
+    "followup_months": {
+      "value": 3,
+      "meaning": "when to repeat an indeterminate screen",
+      "basis": "project default",
+      "source": "Prince 2011 says 'after several months'; the exact interval is this project's choice"
+    }
+  },
+  "red_flags": [
+    {
+      "id": "sudden_onset",
+      "label": "Confusion started suddenly, or got much worse over hours or days",
+      "why": "Sudden change is not typical of dementia. It can mean infection, medicine side effects or another illness that needs treatment now."
+    },
+    {
+      "id": "stroke_signs",
+      "label": "New weakness or numbness on one side, face drooping, or new trouble speaking",
+      "why": "These can be signs of a stroke."
+    },
+    {
+      "id": "head_injury",
+      "label": "Recent fall or blow to the head, followed by drowsiness or a change in thinking",
+      "why": "Bleeding inside the skull can develop after a head injury."
+    },
+    {
+      "id": "safety_risk",
+      "label": "Not safe right now: getting lost, not eating or drinking, or signs of neglect or harm",
+      "why": "The person needs help with safety before any memory assessment."
+    }
+  ],
+  "red_flags_basis": "project default: general clinical safety-netting, to be reviewed by the supervising clinician",
+  "conditions": [
+    { "id": "hearing", "label": "Had trouble hearing the questions" },
+    { "id": "vision", "label": "Could not see well enough for the pointing task" },
+    { "id": "unwell", "label": "Unwell, in pain, or very tired today" },
+    { "id": "language", "label": "Questions were not in the person's first language" },
+    { "id": "distraction", "label": "Noisy or distracting place" }
+  ],
+  "outcomes": {
+    "URGENT": {
+      "title": "Needs to see a doctor today",
+      "say": "Some of what you have told me needs a doctor to look at it today. This is not about memory loss from ageing. Please go to the nearest health centre or hospital now."
+    },
+    "REFER": {
+      "title": "Refer to the clinic for a memory assessment",
+      "say": "This check suggests it would be worth having a doctor look more closely at memory and thinking. This is not a diagnosis. Many things can cause these results and some of them are treatable."
+    },
+    "FOLLOW_UP": {
+      "title": "Check again",
+      "say": "This check did not give a clear answer. We will check again, and it helps if a family member can answer a few questions too."
+    },
+    "INCOMPLETE": {
+      "title": "Screening not finished",
+      "say": "We could not finish the check today. We will come back to complete it."
+    },
+    "NO_REFERRAL": {
+      "title": "No referral needed now",
+      "say": "This check did not find signs that need a referral now. If you or your family notice memory or thinking getting worse, please ask for another check."
+    }
+  },
+  "reasons": {
+    "red_flag": "Urgent sign reported",
+    "csid_combined_positive": "Memory check and family interview together are in the range that needs assessment",
+    "csid_cog_positive": "Memory check score is in the range that needs assessment",
+    "csid_inf_positive": "Family member reports changes in the range that needs assessment",
+    "iqcode_positive": "Longer family interview shows decline in the range that needs assessment",
+    "csid_cog_indeterminate": "Memory check score is borderline and there was no family interview",
+    "informant_concern": "Family member reports changes even though the memory check was in the usual range",
+    "nothing_scored": "No memory check or family interview was completed"
+  },
+  "notes": {
+    "phq2_positive": "Mood check is positive. Low mood can cause or worsen memory trouble: tell the clinic, or suggest a primary care visit for mood.",
+    "test_conditions": "Testing conditions were not ideal, so the memory check score may be lower than the person's real ability.",
+    "no_informant": "No family member was interviewed. Screening is more accurate with one."
+  },
+  "interpretation_limits": [
+    "A positive screen is not a diagnosis of dementia or Alzheimer's disease.",
+    "A negative screen does not rule dementia out.",
+    "Published accuracy figures come from research samples that compared people already known to have dementia with healthy controls. Accuracy in routine community use is expected to be lower.",
+    "The brief CSI-D was derived from items embedded in a longer interview; its authors state that validity of the stand-alone brief form in routine primary care still needed to be established."
+  ]
+}

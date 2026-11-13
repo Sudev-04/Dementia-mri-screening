@@ -1,0 +1,73 @@
+{
+  "name": "synthetic-demo",
+  "created": "2026-11-11T10:05:29Z",
+  "synthetic": true,
+  "task": "dementia (CDR >= 0.5) vs no dementia (CDR 0), OASIS-1, age >= 60",
+  "architecture": "tiny",
+  "parameters": 54041,
+  "preprocess": {
+    "expected_shape": [
+      176,
+      208,
+      176
+    ],
+    "expected_voxel_mm": 1.0,
+    "crop_shape": [
+      160,
+      192,
+      160
+    ],
+    "pool": 2,
+    "robust_max_percentile": 99.5,
+    "min_background_fraction": 0.45,
+    "max_background_fraction": 0.92,
+    "version": "t88-crop-pool-v1",
+    "output_shape": [
+      80,
+      96,
+      80
+    ]
+  },
+  "folds": [
+    {
+      "file": "fold0.onnx",
+      "temperature": 2.0383775500553756,
+      "sha256": "20add71eb0462ad4eaa03e758b1905aaf3ce29f258c7df9ffadb2ffcbde4f7a4"
+    },
+    {
+      "file": "fold1.onnx",
+      "temperature": 4.999966863457837,
+      "sha256": "f0a55e79e4e8b01fa97f185cd4df0e285a12903f47a5dbfef30aeea178e6eb84"
+    },
+    {
+      "file": "fold2.onnx",
+      "temperature": 0.5000025695781378,
+      "sha256": "c2ed2d365706f0f7b884b141d52c1365f4c736578da630fd9337f17c9a912cfa"
+    }
+  ],
+  "threshold": 0.4927233007666607,
+  "training": {
+    "n_subjects": 40,
+    "n_positive": 20,
+    "dataset": "synthetic volumes"
+  },
+  "evaluation": {
+    "method": "3-fold subject-level cross-validation, out-of-fold predictions",
+    "auc": 0.5700000000000001,
+    "auc_ci95": [
+      0.364875,
+      0.7351249999999999
+    ],
+    "sensitivity": 0.65,
+    "specificity": 0.85,
+    "brier": 0.2506406404838004,
+    "baseline_tabular_auc": 0.7825000000000001,
+    "baseline_age_auc": 0.6437499999999999
+  },
+  "limits": [
+    "Research prototype. Not a medical device and not validated for clinical use.",
+    "Trained on one research cohort scanned on one 1.5T scanner; performance on other scanners, sites and populations is unknown and likely lower.",
+    "Separates people with and without clinically rated dementia in that cohort. It does not identify the cause of dementia and does not stage it.",
+    "Accepts only atlas-registered, skull-stripped T1 volumes prepared like OASIS-1."
+  ]
+}

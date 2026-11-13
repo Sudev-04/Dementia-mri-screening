@@ -1,0 +1,77 @@
+{
+  "id": "csid_cog",
+  "version": "1.0",
+  "title": "Memory and thinking check",
+  "short": "Brief CSI-D cognitive scale",
+  "respondent": "participant",
+  "minutes": 3,
+  "intro": "Ask the person each question in the language they are most comfortable with. Do not give hints. Mark what they actually said or did.",
+  "source": {
+    "citation": "Prince M, et al. A brief dementia screener suitable for use by non-specialists in resource poor settings: the cross-cultural derivation and validation of the brief Community Screening Instrument for Dementia. Int J Geriatr Psychiatry 2011;26(9):899-907.",
+    "doi": "10.1002/gps.2622",
+    "pmid": "21845592"
+  },
+  "licence": "Items are from the open-access article above (Creative Commons Attribution 2.5; re-use permitted, commercial exploitation not permitted). The parent CSI-D was developed by K. S. Hall and colleagues. Confirm permission and obtain a validated local-language version before any real field use.",
+  "wording_status": "English administration wording follows the published appendix. No translation is shipped: unvalidated translations of cognitive test items are not acceptable for screening.",
+  "scoring": { "method": "sum", "range": [0, 9] },
+  "items": [
+    {
+      "id": "register",
+      "type": "info",
+      "prompt": "First, say: \"I am going to tell you three words. Please repeat them and try to remember them: Boat, House, Fish.\"",
+      "guide": "Repeat the three words until the person can say all three (up to six tries). This step is not scored. You will ask for the words again at the end."
+    },
+    {
+      "id": "elbow",
+      "type": "choice",
+      "prompt": "Point to your own elbow and ask: \"What do we call this?\"",
+      "options": [ { "label": "Correct", "value": 1 }, { "label": "Incorrect", "value": 0 } ]
+    },
+    {
+      "id": "hammer",
+      "type": "choice",
+      "prompt": "\"What do you do with a hammer?\"",
+      "guide": "Correct if the answer shows they know its use, for example driving a nail into something.",
+      "options": [ { "label": "Correct", "value": 1 }, { "label": "Incorrect", "value": 0 } ]
+    },
+    {
+      "id": "store",
+      "type": "choice",
+      "prompt": "\"Where is the local market or the nearest shop?\"",
+      "guide": "Correct if the answer is right for where the person lives.",
+      "options": [ { "label": "Correct", "value": 1 }, { "label": "Incorrect", "value": 0 } ]
+    },
+    {
+      "id": "day",
+      "type": "choice",
+      "prompt": "\"What day of the week is it today?\"",
+      "options": [ { "label": "Correct", "value": 1 }, { "label": "Incorrect", "value": 0 } ]
+    },
+    {
+      "id": "season",
+      "type": "choice",
+      "prompt": "\"What season is it now?\"",
+      "guide": "Accept the season name people use locally.",
+      "options": [ { "label": "Correct", "value": 1 }, { "label": "Incorrect", "value": 0 } ]
+    },
+    {
+      "id": "point",
+      "type": "choice",
+      "prompt": "\"Please point first to the window and then to the door.\"",
+      "guide": "Correct only if both are pointed to, in that order.",
+      "options": [ { "label": "Correct", "value": 1 }, { "label": "Incorrect", "value": 0 } ]
+    },
+    {
+      "id": "recall",
+      "type": "choice",
+      "prompt": "\"Do you remember the three words I told you a few minutes ago?\"",
+      "guide": "The words were Boat, House, Fish. Count how many the person recalls without help.",
+      "options": [
+        { "label": "0 words", "value": 0 },
+        { "label": "1 word", "value": 1 },
+        { "label": "2 words", "value": 2 },
+        { "label": "3 words", "value": 3 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+instance/
+runs/
+data/
+models/current/
+node_modules/
+*.npy
+.DS_Store
