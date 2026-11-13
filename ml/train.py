@@ -180,9 +180,12 @@ def main(argv=None) -> dict:
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
     cfg = PreprocessConfig(pool=args.pool)
 
-    df = build_cohort(args.csv, args.data_root, args.min_age)
+    cache_dir = Path(args.cache_dir or out / "cache")
+    suffix = f"_{cfg.version}_p{cfg.pool}.npy"
+    cached = {p.name[: -len(suffix)] for p in cache_dir.glob(f"*{suffix}")} if cache_dir.exists() else set()
+    df = build_cohort(args.csv, args.data_root, args.min_age, cached_subjects=cached)
     print(describe(df)); print(f"Device: {device}")
-    paths = np.array(cache_volumes(df, Path(args.cache_dir or out / "cache"), cfg))
+    paths = np.array(cache_volumes(df, cache_dir, cfg))
     y = df["label"].to_numpy()
     if args.shuffle_labels:
         y = np.random.default_rng(args.seed).permutation(y)

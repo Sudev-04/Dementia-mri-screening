@@ -70,15 +70,24 @@ def find_images(data_root: str | Path) -> dict[str, Path]:
     return found
 
 
-def build_cohort(csv_path: str | Path, data_root: str | Path, min_age: int = 60) -> pd.DataFrame:
-    """Return one row per subject with image path, label and tabular features."""
+def build_cohort(csv_path: str | Path, data_root: str | Path, min_age: int = 60,
+                 cached_subjects: set[str] | None = None) -> pd.DataFrame:
+    """Return one row per subject with image path, label and tabular features.
+
+    ``cached_subjects`` lists people whose preprocessed volume is already cached;
+    they are kept even when the raw image is absent, so a reset machine can resume
+    training from the cache without downloading the scans again. The cohort rules
+    (one session per person, age, CDR) are applied identically either way.
+    """
     demo = read_demographics(csv_path)
-    images = find_images(data_root)
+    images = find_images(data_root) if Path(data_root).exists() else {}
+    cached_subjects = cached_subjects or set()
 
     df = demo[demo["session_no"] == 1].copy()            # drop repeat sessions
     df = df[(df["age"] >= min_age) & df["cdr"].notna()]  # clinically rated older adults
     df["label"] = (df["cdr"] > 0).astype(int)
-    df["image"] = df["session_id"].map(lambda s: str(images[s]) if s in images else None)
+    df["image"] = [str(images[s]) if s in images else ("<cached>" if subj in cached_subjects else None)
+                   for s, subj in zip(df["session_id"], df["subject_id"])]
 
     missing = df[df["image"].isna()]
     if len(missing):
