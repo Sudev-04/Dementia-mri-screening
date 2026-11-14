@@ -515,7 +515,7 @@ function scanResult(r) {
         <li>Repeatable: ICC ${v.test_retest_icc} across ${v.test_retest_pairs} people scanned twice.</li>
         <li>Agrees with OASIS's own brain-volume measure: r = ${v.corr_with_oasis_nwbv}.</li>
         <li>Weak at separating groups: with age, AUC ${v.auc_with_age_cdr0_vs_cdr_ge_0_5} (95% CI ${v.auc_ci95[0]} to ${v.auc_ci95[1]}) for dementia against no dementia. The two groups overlap heavily.</li>
-        <li>Very mild dementia (CDR 0.5) was mostly missed: about ${pct(v.detected_cdr_0_5_at_80pct_specificity_tabular_model)} detected at 80% specificity.</li>
+        <li>Very mild dementia (CDR 0.5) was mostly missed: in the same study the age-and-volume model detected about ${pct(v.detected_cdr_0_5_at_80pct_specificity_tabular_model)} at 80% specificity, and the scan-based models did no better.</li>
       </ul>
       <h2>Limits</h2>
       <ul class="plain">${r.reference.limits.map((l) => `<li>${esc(l)}</li>`).join("")}</ul>
@@ -562,7 +562,7 @@ async function scanInBrowser(form, sample) {
     const { measure, scale } = scanlocal.assess(vol.data, age, ref);
     return { accepted: true, sample, checks, measure, image: scanlocal.renderSlices(vol, scale),
       reference: { name: ref.name, validation: ref.validation, limits: ref.limits, reference_group: ref.reference_group },
-      model_message: "The browser-only demo does not include the neural network. In testing it was the weakest model, so nothing is lost." };
+      model_message: "The browser-only demo does not include the neural network. In testing a single trained network scored lower than this measure, so nothing is lost." };
   } catch (e) {
     if (e instanceof scanlocal.ScanRejected) return { accepted: false, reason: e.message };
     throw e;
