@@ -1,6 +1,6 @@
 // Service worker: makes the app open and run with no network.
 // Bump VERSION whenever any file in SHELL changes so phones pick up the update.
-const VERSION = "v4";
+const VERSION = "v5";
 const CACHE = `alzscreen-${VERSION}`;
 const SHELL = [
   "/",
